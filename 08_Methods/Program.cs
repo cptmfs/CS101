@@ -11,7 +11,7 @@
 
         #endregion
 
-        #region  Geriye değer döndürmeyen ve parametre alan
+        #region  Geriye değer döndürmeyen ve parametre alandır.
 
         //int uzunKenar, kisaKenar;
         //Console.WriteLine("Lütfen Dikdörtgenin Uzun Kenarını Giriniz : ");

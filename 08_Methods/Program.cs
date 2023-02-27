@@ -66,10 +66,21 @@
 
         #region Metotlarda aşırı yüklenme
 
-        Console.WriteLine("2'li Toplama işlemi  Sonucu : {0}", toplamaIslemi(45, 45));
-        Console.WriteLine("3'li Toplama işlemi  Sonucu : {0}", toplamaIslemi(45, 45,90));
-        Console.WriteLine("4'li Toplama işlemi  Sonucu : {0}", toplamaIslemi(45, 45,127,138));
+        //Console.WriteLine("2'li Toplama işlemi  Sonucu : {0}", toplamaIslemi(45, 45));
+        //Console.WriteLine("3'li Toplama işlemi  Sonucu : {0}", toplamaIslemi(45, 45,90));
+        //Console.WriteLine("4'li Toplama işlemi  Sonucu : {0}", toplamaIslemi(45, 45,127,138));
 
+
+        #endregion
+
+        #region Soru : menülü bişi
+
+        // Ekrana seçenekli bir menü gelicek..
+        //Secenekleri 1) Hesap makinesi , 2) Tek/Çift Kontrol..
+        // Buna göre metodları hazırlayınız.. ( menüyü ekrana getirme, hesap makinesi , tek çift)
+
+        // İlk secenekte Normal hesap makinesi
+        //İkicinci secenekte
 
         #endregion
 
@@ -201,6 +212,11 @@
     private static int toplamaIslemi(int a, int b, int c, int d)
     {
         return a + b + c + d;
+    }
+
+    public static void Menu()
+    {
+
     }
 
     #endregion

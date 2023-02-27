@@ -51,15 +51,24 @@
 
         //Soru : Uygun metod yapısı kullanarak  4 islemi gerçekleştiriniz ( +,-,*,/). Birden fazla  metod  tanımlayabilirsiniz..
         // Ek : İslem tipinide alıp ona göre düsünelim..
-        Console.WriteLine("Lütfen sayi1'i giriniz : ");
-        int sayi1 = int.Parse(Console.ReadLine());
-        Console.WriteLine("Lütfen sayi2'yi giriniz : ");
-        int sayi2 = int.Parse(Console.ReadLine());
-        Console.Write("\n Bölme İşlemi için :/ \n Çarpma İşlemi için :* \n Toplama İşlemi için :+ \n Çıkarma İşlemi için :- yazınız..\nLütfen yapmak istediğiniz işlemi yazınız : ");
-        string islem = Console.ReadLine();
+        //Console.WriteLine("Lütfen sayi1'i giriniz : ");
+        //int sayi1 = int.Parse(Console.ReadLine());
+        //Console.WriteLine("Lütfen sayi2'yi giriniz : ");
+        //int sayi2 = int.Parse(Console.ReadLine());
+        //Console.Write("\n Bölme İşlemi için :/ \n Çarpma İşlemi için :* \n Toplama İşlemi için :+ \n Çıkarma İşlemi için :- yazınız..\nLütfen yapmak istediğiniz işlemi yazınız : ");
+        //string islem = Console.ReadLine();
 
-        Console.WriteLine("İşlem Türü : {0}\nİşlemin Sonucu : {1} ",islem,DortIslem(sayi1, sayi2, islem)); 
+        //Console.WriteLine("İşlem Türü : {0}\nİşlemin Sonucu : {1} ", islem, DortIslem(sayi1, sayi2, islem));
 
+
+
+        #endregion
+
+        #region Metotlarda aşırı yüklenme
+
+        Console.WriteLine("2'li Toplama işlemi  Sonucu : {0}", toplamaIslemi(45, 45));
+        Console.WriteLine("3'li Toplama işlemi  Sonucu : {0}", toplamaIslemi(45, 45,90));
+        Console.WriteLine("4'li Toplama işlemi  Sonucu : {0}", toplamaIslemi(45, 45,127,138));
 
 
         #endregion
@@ -146,9 +155,9 @@
 
     }
 
-    private static int DortIslem(int sayi1, int sayi2 , string islem)
+    private static int DortIslem(int sayi1, int sayi2, string islem)
     {
-        int sonuc=0;
+        int sonuc = 0;
 
         if (islem == "+")
         {
@@ -179,6 +188,19 @@
             }
         }
         return sonuc;
+    }
+
+    private static int toplamaIslemi(int a, int b)
+    {
+        return a + b;
+    }
+    private static int toplamaIslemi(int a, int b, int c)
+    {
+        return a + b + c;
+    }
+    private static int toplamaIslemi(int a, int b, int c, int d)
+    {
+        return a + b + c + d;
     }
 
     #endregion

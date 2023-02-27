@@ -76,11 +76,13 @@
         #region Soru : menülü bişi
 
         // Ekrana seçenekli bir menü gelicek..
-        //Secenekleri 1) Hesap makinesi , 2) Tek/Çift Kontrol..
+        //Secenekler 1) Hesap makinesi , 2) Tek/Çift Kontrol..
         // Buna göre metodları hazırlayınız.. ( menüyü ekrana getirme, hesap makinesi , tek çift)
 
         // İlk secenekte Normal hesap makinesi
         //İkicinci secenekte
+
+        Menu();
 
         #endregion
 
@@ -216,10 +218,88 @@
 
     public static void Menu()
     {
+        Console.WriteLine("Hesap Makinesi için : H \t Tek/Çift Kontrol için : T  'ye basınız...");
+        Console.WriteLine("Lütfen yapmak istediğiniz işlemi seçiniz : ");
+        string secenek = Console.ReadLine();
 
+        if (secenek == "h" || secenek == "H")
+        {
+            Console.WriteLine("İşlem Sonucu : " + hesapMakinesi());
+        }
+        else if (secenek == "t" || secenek == "T")
+        {
+            Console.WriteLine("Girdiğiniz Sayi  : " + tekCiftKontrol());
+        }
+        else
+        {
+            Console.WriteLine("Lütfen Düzgün Değer Giriniz..");
+        }
     }
 
+    public static int hesapMakinesi()
+    {
+        Console.WriteLine("Lütfen sayi1'i giriniz : ");
+        int sayi1 = int.Parse(Console.ReadLine());
+        Console.WriteLine("Lütfen sayi2'yi giriniz : ");
+        int sayi2 = int.Parse(Console.ReadLine());
+        Console.Write("\n Bölme İşlemi için :/ \n Çarpma İşlemi için :* \n Toplama İşlemi için :+ \n Çıkarma İşlemi için :- yazınız..\nLütfen yapmak istediğiniz işlemi yazınız : ");
+        string islem = Console.ReadLine();
+
+        int sonuc = 0;
+
+        if (islem == "+")
+        {
+            sonuc = sayi1 + sayi2;
+
+        }
+
+        else if (islem == "-")
+        {
+            sonuc = sayi1 - sayi2;
+        }
+        else if (islem == "*")
+        {
+            sonuc = sayi1 * sayi2;
+        }
+        else if (islem == "/")
+        {
+            try
+            {
+                sonuc = sayi1 / sayi2;
+            }
+            catch (Exception)
+            {
+
+                Console.WriteLine("sayi2 değeri 0.. değerlerin sırasını değiştiriyorum..");
+                sonuc = sayi2 / sayi1;
+
+            }
+
+
+        }
+        return sonuc;
+    }
+
+    public static string tekCiftKontrol()
+    {
+        Console.WriteLine("Lütfen Tek/Cift durumunu kontrol etmek istediğiniz  sayiyi giriniz : ");
+        int sayi = int.Parse(Console.ReadLine());
+        string sonuc;
+        if (sayi%2==0)
+        {
+            sonuc = "Çift Sayıdır";
+        }
+        else
+        {
+            sonuc = "Tek Sayıdır";
+
+        }
+
+        return sonuc;
+
+    }
+}
     #endregion
 
 
-}
+

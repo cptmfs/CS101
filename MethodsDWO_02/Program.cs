@@ -11,7 +11,7 @@ namespace MethodsDWO_02
         // Global Degiskenler..
 
         // datUsers
-        public static string[,] datUsers = new string[,]
+        public static string[,] datUsers = new string[,] // 2 boyutlu dizi 
         {
             {"admin", "ferit", "cptmfs"},  // kullanıcı adları
             {"admin", "1234", "5678"},     // Şifreler
@@ -21,7 +21,10 @@ namespace MethodsDWO_02
         public static string userAuthority; // Admin yada User 
         public static string userStatus;    // Kullanıcı Aktif mi Pasif mi ? 
 
-        
+        public static string[] datLog = new string[10]; //Log dizisi..  // Tek boyutlu dizi...
+
+        public static int indexLog =0;
+
         static void Main(string[] args)
         {
             //kullanıcı adi , sifresi , yetkisi , aktifliğini iceren bir dizi var.
@@ -39,7 +42,7 @@ namespace MethodsDWO_02
             // 3. Kullanıcıdan userName ve passWord istenecek..
             // 4. Bir kontrol islemiyle(datUser dizisi) kullanıcının var olup olmadıgı kontrol edilecek.. Yok ise ;   Uyarı Mesajı verilecek.. ve Tekrar Login Ekranına Gönderilecek.. Var ise ; Kullanıcının diger bilgileri (yetki ve aktiflik) ögrenilecek.. Buna göre yetki durumuna baglı olarak farklı ekranlar gösterilecek.. Yani ; Admin ise (Admin Paneli) User ise (Yapacağı İşlemler Listesi) gibi..
             // 5. Yapılan işlemler datLog isimli bir diziye işlenecek.. Admin istediğinde bu kayıtlar listelenecek.. Bu Secenek Admin Menusunde olacak..
-            
+
             bool showMenu = true;
 
             while (showMenu)
@@ -74,7 +77,6 @@ namespace MethodsDWO_02
 
                     //Programdan Cikis bolumu..
                     return false;
-
                 default:
                     return true;
 
@@ -85,32 +87,48 @@ namespace MethodsDWO_02
         private static bool loginMenu()
         {
             string userID = "", userPass = "";
+
+            Console.Clear();
             Console.WriteLine("\t\t\t\t\t\t ------ Kullanıcı Girişi ------ ");
+            Console.WriteLine("Ana Menüye dönmek için * a basınız ..\n");
             Console.WriteLine("Lütfen Kullanıcı adını giriniz : ");
             userID = Console.ReadLine().Trim();
+            if (userID == "*")
+            {
+                return false;
+            }
+
             Console.WriteLine("Lütfen Şifrenizi giriniz : ");
             userPass = Console.ReadLine();
             userPass = userPass.Trim();
 
-            if (UserControl(datUsers,userID,userPass))
+
+
+            if (UserControl(datUsers, userID, userPass))
             {
                 // eger kullanıcı bulunduysa ..
                 Console.WriteLine("Kullanıcı Girişi Başarılı!   \n\n");
                 Console.WriteLine($"Kullanıcı Yetki Seviyesi  : {userAuthority}\n\n");
                 Console.WriteLine($"Kullanıcı Durumu  : {userStatus}\n\n");
-                Console.WriteLine("Devam Etmek için bir tuşa basınız...");
+                
 
+                printLog(userID);          
             }
             else
             {
                 Console.WriteLine("Kullanıcı Girişi Başarısız..");
             }
             Console.ReadKey();
-
-
+            //Console.WriteLine("Ana menü için 3 e basınız");
+            //int anaMenu = Convert.ToInt32(Console.ReadLine());
+            //if (anaMenu==3)
+            //{
+            //    mainMenu();
+            //}
+            
             return true;
         }
-        private static bool UserControl(string[,]prmUsers,string prmUser,string prmPass)
+        private static bool UserControl(string[,] prmUsers, string prmUser, string prmPass)
         {
 
             bool found = false; // Kullanıcının bulunup bulunmadıgını belirten bir degisken
@@ -121,9 +139,9 @@ namespace MethodsDWO_02
             {
                 for (int sutun = 0; sutun < prmUsers.GetLength(1); sutun++)
                 {
-                    if (prmUsers[satir,sutun] == prmUser) // eslesen kullanıcı varmı ? 
+                    if (prmUsers[satir, sutun] == prmUser) // eslesen kullanıcı varmı ? 
                     {
-                        if (prmUsers[satir+1, sutun] == prmPass) // kullanıcının alt satırında aynı sutundaki sifre eslesiyormu ?
+                        if (prmUsers[satir + 1, sutun] == prmPass) // kullanıcının alt satırında aynı sutundaki sifre eslesiyormu ?
                         {
                             userAuthority = prmUsers[satir + 2, sutun]; // kullanıcı adı sifre eslesen yerde kullanıcı adının 2 satır altında tanımladıgımız . Admin User gibi kullanıcı  Türünü atıyoruz.
                             userStatus = prmUsers[satir + 3, sutun]; // kullanıcı adı sifre eslesen yerde kullanıcı adının 3 satır altında tanımladıgımız . + / - gibi kullanıcı  aktiflik pasiflik durumunu atıyoruz.
@@ -140,6 +158,19 @@ namespace MethodsDWO_02
                 }
             }
             return found;
+        }
+
+        private static string printLog(string kullaniciAdi)
+        {
+            datLog[indexLog] = $"{kullaniciAdi} isimli kullanıcı sisteme giriş yapmıştır..";
+            indexLog++;
+
+            for (int i = 0; i < indexLog; i++)
+            {
+                Console.WriteLine("Log Kaydı : " + datLog[i] + "\tGiriş Zamanı : " + DateTime.Now);
+            }
+
+            return kullaniciAdi;
         }
     }
 }

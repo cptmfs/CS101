@@ -86,6 +86,7 @@ namespace MethodsDWO_02
         }
         private static bool loginMenu()
         {
+            // Not : Her Sifre  karakteri girdiginde , sifre bölümünde yildiz gözüksün..
             string userID = "", userPass = "";
 
             Console.Clear();
@@ -99,7 +100,9 @@ namespace MethodsDWO_02
             }
 
             Console.WriteLine("Lütfen Şifrenizi giriniz : ");
+            
             userPass = Console.ReadLine();
+            Console.WriteLine();
             userPass = userPass.Trim();
 
 

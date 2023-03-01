@@ -100,7 +100,7 @@ namespace MethodsDWO_02
             }
 
             Console.WriteLine("Lütfen Şifrenizi giriniz : ");
-            
+            hidePass();
             userPass = Console.ReadLine();
             Console.WriteLine();
             userPass = userPass.Trim();
@@ -174,6 +174,51 @@ namespace MethodsDWO_02
             }
 
             return kullaniciAdi;
+        }
+
+        private static string hidePass()
+        {
+            string pass = "";
+            do
+            {
+                ConsoleKeyInfo key = Console.ReadKey(true);
+
+                if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
+                {
+                    pass += key.KeyChar;
+                    Console.Write("*");
+                }
+                else
+                {
+                    if (key.Key == ConsoleKey.Backspace && pass.Length > 0)
+                    {
+                        pass = pass.Substring(0, (pass.Length - 1));
+                        Console.Write("\b \b");
+                    }
+                    else if (key.Key == ConsoleKey.Enter)
+                    {
+                        break;
+                    }
+                }
+            } while (true);
+            return pass;
+
+            //string sifre = "";
+            //ConsoleKeyInfo tus;
+
+            //do
+            //{
+            //    tus = Console.ReadKey(true);
+
+            //    if (tus.Key != ConsoleKey.Enter && tus.Key != ConsoleKey.Backspace)
+            //    {
+            //        sifre += tus.KeyChar;
+            //        Console.Write("*");
+            //    }
+            //}
+            //while (tus.Key != ConsoleKey.Enter);
+
+            //return sifre;
         }
     }
 }

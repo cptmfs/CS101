@@ -9,8 +9,8 @@ namespace _11_Inheritance
     internal class clsTutorials
     {
 
-        int tutorialId;
-        public string tutorialName;
+        protected int tutorialId;
+        protected string tutorialName;
 
         public void setTutorial (int pID, string pName)
         {

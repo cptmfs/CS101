@@ -62,9 +62,34 @@ namespace _14_Encapsulation
             this.balance2 = balance2;  // " this " Benim yukarda tanımladığım değişkenimi güncelleyeceksin demek..
         }
 
-
-
         #endregion
 
+        #region Eğer sınıfı tasarlarken Kapsülleme(encapsülation) prensibine uymazsak ne olur?
+
+        //Daha sonra , gelecekte müşteri uygulamanın negatif bir değere izin vermemesini istiyor.
+        //Ardından miktar değişkeninde saklamadan önce kullanıcı tarafından verilen değerleri doğrulamalıyız.. 
+        //Bu nedenle kapsülleme ilksesini aşağıdaki gibi izleyerek uygulamayı geliştirmemiz gerekir..
+        
+
+        public int amount;
+
+        public int GetAmount()
+        {
+            return amount;
+        }
+
+        public void SetAmount(int amount)
+        {
+            if (amount>0)
+            {
+                this.amount = amount;
+            }
+            else
+            {
+                throw new Exception("Negatif bir Değer Girdiniz ...!!");
+            }
+        }
+
+        #endregion
     }
 }

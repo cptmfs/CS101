@@ -1,6 +1,6 @@
 ﻿using _14_Encapsulation;
 
-internal class Program 
+internal class Program
 {
     private static void Main(string[] args)
     {
@@ -17,7 +17,7 @@ internal class Program
         clsBank.Deposit();
 
         #endregion
-        Console.WriteLine("\n-------------------------------------------\n");
+        Console.WriteLine("\n\n-------------------------------------------\n\n");
         #region Getter / Setter
 
 
@@ -26,6 +26,46 @@ internal class Program
 
         #endregion
 
+        Console.WriteLine("\n\n-------------------------------------------\n\n");
+
+        #region Eğer sınıfı tasarlarken Kapsülleme(encapsülation) prensibine uymazsak ne olur?
+
+        //Sınıfı tasarlarken C# kapsülleme prensibini takip etmezsek, kullanıcı tarafından verilen verileri iş gereksinimlerimize göre doğrulayamayız ve gelecekteki değişiklikleri ele almanın bu durumda çok zor oldugu açıktır..
+        //Bunu bir örnekle anlayalım. İlk proje gereksiniminde müşterinin uygulamanın negatif sayının depolanmasına izin vermesi gerektiğini belirtmediğini varsayalım.. Bu nedenle değişkene sınıf dışından doğrudan erişim sağlarız ve şimdi kullanıcı aşağıdaki örnekte gösterildiği gibi herhangi bir değeri depolayabilir.
+        // Burada , miktar değişkenine doğrudan clsBank sınıfının dışından eriştiğimizi ve hem pozitif hemde negatif değerler ayarladığımızı görebilirsiniz...
+
+        clsBank clsBank1 = new clsBank();
+
+        //Pozitif bir değerle Amount değerini güncelleyin.
+
+        clsBank1.amount = 100;
+
+        Console.WriteLine($"Bankadaki miktar : {clsBank1.amount} PNG Kina.");
+
+        clsBank1.amount = -150;
+
+        Console.WriteLine($"Bankadaki miktar : {clsBank1.amount} PNG Kina.");
+        Console.WriteLine("\n\n-------------------------------------------\n\n");
+
+        // Hata yakalamaa
+        try
+        {
+            clsBank clsBank3 = new clsBank();
+
+            clsBank3.SetAmount(1500);
+
+            Console.WriteLine($"Bankadaki miktar : {clsBank3.GetAmount()} PNG Kina.");
+
+            clsBank3.SetAmount(-1500);
+            Console.WriteLine($"Bankadaki miktar : {clsBank3.GetAmount()} PNG Kina.");
+
+        }
+        catch (Exception hata)
+        {
+            Console.WriteLine(hata.Message);
+        }
+
+        #endregion
 
         Console.ReadKey();
     }

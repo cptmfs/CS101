@@ -91,5 +91,35 @@ namespace _14_Encapsulation
         }
 
         #endregion
+
+        #region Properties / Değişkenlere de uygulanabilir..
+
+        private int _Amount1;
+        
+        public int _Amount2 { get; set; } // Sadece alır ve yazar koşulsuz bir şekilde..
+
+
+        // Şu şekildede kullanılır..
+
+        public int Amount1 // koşul atamak istediğimizde kullanılır..
+        {
+            get
+            {
+                return _Amount1;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new Exception("Lütfen Pozitif bir değer giriniz");
+                }
+                else
+                {
+                    _Amount1 = value;
+                }
+            }
+        }
+
+        #endregion
     }
 }

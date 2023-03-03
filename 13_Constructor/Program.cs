@@ -41,10 +41,32 @@ internal class Program
 
         #region Parametreli Constructor
 
-        clsParametized parametized = new clsParametized(10);
+        //clsParametized parametized = new clsParametized(10);
 
+        //parametized.Display();
+        //clsParametized parametized1= new clsParametized(20);    
+
+        //parametized1.Display();
+
+        //clsParametized parametized2 = new clsParametized(30);
         
+        //parametized2.Display();
 
+
+        #endregion
+
+
+        #region Copy Constructor
+
+        // Aynı değerlere sahip birden fazla örnek/nesne olusturulması istendigi durumlarda kullanılmalıdır...
+        // Bu durumda Copy Ctor yapıcısı aynı sınıfı üzerine parametre olarak alır..
+        clsCopy clsCopy = new clsCopy(10);
+
+        clsCopy.Display();
+
+        clsCopy clsCopy1 = new clsCopy(clsCopy);
+
+        clsCopy1.Display();
 
         #endregion
 

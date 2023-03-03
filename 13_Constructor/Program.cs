@@ -10,11 +10,43 @@ internal class Program
         // degisik durumlarda initial islemler yapmak için kullanılır..
         // parametreli de kullanımı olabilir.
 
-        clsTest clsTest = new clsTest();
+        #region Standart Yapı
 
-        Console.WriteLine($"i Değeri : {clsTest.i} \ns Değeri : {clsTest.s} \nb Değeri : {clsTest.b}");
+        //clsTest clsTest = new clsTest();
+
+        //Console.WriteLine($"i Değeri : {clsTest.i} \ns Değeri : {clsTest.s} \nb Değeri : {clsTest.b}");
+
+        #endregion
+
+        // Constructor Tipleri
+
+        // Default or Parameterless Constructor -- standart/parametresiz
+        // Parameterized Constructor -- parametreli
+        // Copy Constructor -- 
+        // Static Constructor -- 
+        // Private Constructor --
+
+        #region Default/Parametresiz 
+
+        // 
+        //clsEmployee employee = new clsEmployee();
+
+        //employee.DisplayEmployee();
+
+        //clsEmployee employee1 = new clsEmployee();
+        //employee.Name = "Şeyma";
+        //employee.DisplayEmployee();
+
+        #endregion
+
+        #region Parametreli Constructor
+
+        clsParametized parametized = new clsParametized(10);
+
+        
 
 
+        #endregion
 
 
 

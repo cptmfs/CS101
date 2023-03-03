@@ -19,7 +19,8 @@ namespace _13_Constructor
             i = 50;
             b=true;
             s = "Ferit";
-        }
 
+        }
+        
     }
 }

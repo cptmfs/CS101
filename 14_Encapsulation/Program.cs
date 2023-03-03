@@ -50,13 +50,19 @@ internal class Program
         // Hata yakalamaa
         try
         {
+            int deger;
             clsBank clsBank3 = new clsBank();
 
-            clsBank3.SetAmount(1500);
+            Console.WriteLine("Lütfen değeri giriniz... : ");
+            deger = Convert.ToInt32(Console.ReadLine());
 
+            clsBank3.SetAmount(deger);
             Console.WriteLine($"Bankadaki miktar : {clsBank3.GetAmount()} PNG Kina.");
+            
+            Console.WriteLine("Lütfen değeri giriniz... : ");
+            deger = Convert.ToInt32(Console.ReadLine());
 
-            clsBank3.SetAmount(-1500);
+            clsBank3.SetAmount(deger);
             Console.WriteLine($"Bankadaki miktar : {clsBank3.GetAmount()} PNG Kina.");
 
         }

@@ -33,7 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "13_Constructor", "13_Constr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "14_Encapsulation", "14_Encapsulation\14_Encapsulation.csproj", "{D2146946-DA1C-43AB-AF3D-2EA099606549}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_DWO_01", "OOP_DWO_01\OOP_DWO_01.csproj", "{87E8E007-EF57-4DEA-82A0-B404DF5CB4C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP_DWO_01", "OOP_DWO_01\OOP_DWO_01.csproj", "{87E8E007-EF57-4DEA-82A0-B404DF5CB4C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15_Abstraction", "15_Abstraction\15_Abstraction.csproj", "{B4279767-6D06-4A5C-94FD-8E6A7F700856}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16_Interfaces", "16_Interfaces\16_Interfaces.csproj", "{21CC08F7-488F-4B8D-B6F1-1A057B29588C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +109,14 @@ Global
 		{87E8E007-EF57-4DEA-82A0-B404DF5CB4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87E8E007-EF57-4DEA-82A0-B404DF5CB4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87E8E007-EF57-4DEA-82A0-B404DF5CB4C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4279767-6D06-4A5C-94FD-8E6A7F700856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4279767-6D06-4A5C-94FD-8E6A7F700856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4279767-6D06-4A5C-94FD-8E6A7F700856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4279767-6D06-4A5C-94FD-8E6A7F700856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21CC08F7-488F-4B8D-B6F1-1A057B29588C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21CC08F7-488F-4B8D-B6F1-1A057B29588C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21CC08F7-488F-4B8D-B6F1-1A057B29588C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21CC08F7-488F-4B8D-B6F1-1A057B29588C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

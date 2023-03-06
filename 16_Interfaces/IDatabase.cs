@@ -15,7 +15,7 @@ namespace _16_Interfaces
         void Close(); //Database'i kapatan metot..
         void AddValue(string value); // Database'imize bir değer ekleyen metot ..
 
-        void DeleteValue(string value); // Database'den değer silen metot ..
+        void DeleteValue(); // Database'den değer silen metot ..
 
         void UpdateValue(string value); // Database'de değerleri güncelleye metot..
 
